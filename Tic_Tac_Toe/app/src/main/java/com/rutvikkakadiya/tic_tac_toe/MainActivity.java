@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
     // 0 = x , 1 = o;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             counter.animate().rotationY(3600f).translationYBy(1000f).setDuration(100);
 
             for(int[] winner : winners){
+
+                
                 if(check[winner[0]]==check[winner[1]]
                         && check[winner[1]]==check[winner[2]]
                         && check[winner[0]]!=2){
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
                     TextView winnerDisplay = (TextView) findViewById(R.id.winnerDisplay);
                     winnerDisplay.setText(win + " has WON!");
+                    break;
                 }else{
                     boolean gameIsOver = true;
                     for(int checker : check){
